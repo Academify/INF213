@@ -1,12 +1,8 @@
-#include <iostream>
 #include "Horario.h"
 
-using namespace std;
-
 //Constructors
-Horario::Horario(){}
 
-Horario::Horario(int h = 0, int m = 0, int s = 0){
+Horario::Horario(int h, int m = 0, int s = 0){
     this->hora = h;
     this->minuto = m;
     this->segundo = s;
@@ -20,27 +16,57 @@ Horario::Horario(const Horario &hms){
 
 //Setters
 void Horario::setHora(int h){
-    this->hora = h;
+    if(h >= 0){
+        this->hora = h;
+    }else{
+        this->hora = 0;
+    }
+
+    if( h <= 23){
+        this->hora = h;
+    }else{
+        this->hora = 23;
+    }
 }
 
 void Horario::setMinuto(int m){
-    this->minuto = m;
+    if(m >= 0){
+        this->minuto = m;
+    }else{
+        this->minuto = 0;
+    }
+
+    if(m <= 59){
+        this->minuto = m;
+    }else{
+        this->minuto = 59;
+    }
 }
 
 void Horario::setSegundo(int s){
-    this->segundo = s;
+    if(s >= 0){
+        this->segundo = s;
+    }else{
+        this->segundo = 0;
+    }
+
+    if(s <= 59){
+        this->segundo = s;
+    }else{
+        this->segundo = 59;
+    }
 }
 
 //Getters
-int Horario::getHora(){
+int Horario::getHora()const{
     return this->hora;
 }
 
-int Horario::getMinuto(){
+int Horario::getMinuto()const{
     return this->minuto;
 }
 
-int Horario::getSegundo(){
+int Horario::getSegundo()const{
     return this->segundo;
 }
 
@@ -76,17 +102,25 @@ int Horario::difSegundos(const Horario &hms){
 }
 
 void Horario::imprime(){
-    cout << this->hora << ":" << this->minuto << ":" << this->segundo << endl;
+    cout << this->hora << " " << this->minuto << " " << this->segundo << endl;
 }
 
-void Horario::operator<<(const Horario &hr){
-    cout << hr.hora << "/" << hr.minuto << "/" << hr.segundo << endl;
+istream &operator>>(istream &in, Horario &hr){
+    int h,m,s;
+
+    in >> h >> m >> s;
+
+    hr.setHora(h);
+    hr.setMinuto(m);
+    hr.setSegundo(s);
+
+    return in;
 }
 
-void Horario::operator>>(const Horario &hr){
-    int h = hr.hora;
-    int m = hr.minuto;
-    int s = hr.segundo;
- 
+ostream &operator<<(ostream &out, Horario &hr){
+    out << hr.getHora << ":" << hr.getMinuto() << ":" << hr.getSegundo() << endl;
+    return out;
 }
+
+
 

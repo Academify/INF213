@@ -1,5 +1,9 @@
 #ifndef DATA_H
 #define DATA_H
+
+#include <iostream>
+
+using namespace std;
 class Data{
     private:
         int dia;
@@ -7,28 +11,29 @@ class Data{
         int ano;
     public:
         //Setters
-        void setDia(int d);
-        void setMes(int m);
-        void setAno(int a);
+        void setDia(int);
+        void setMes(int);
+        void setAno(int);
 
         //Getters
-        int getDia();
-        int getMes();
-        int getAno();
+        int getDia()const;
+        int getMes()const;
+        int getAno()const;
 
         //Constructors
-        //Data();
-        Data(int d, int m, int a);
-        Data(const Data &dt);
+        Data();
+        Data(int, int, int);
+        Data(const Data &);
 
         //Others
-        int compData(const Data &dma);
-        int difDias(const Data &dma);
+        int compData(const Data &);
+        int difDias(const Data &);
         void imprime();
-        int quantDias(Data dt1, Data dt2);
+        int quantDias(Data, Data);
 
         //Operadores
-        void operator<<(const Data &dt);
-        Data operator>>(istream entrada);
+        friend istream &operator>>(istream &,  Data &);
+        friend ostream &operator<<(ostream &, const Data &);
+        
 };
 #endif

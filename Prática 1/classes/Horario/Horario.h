@@ -1,6 +1,9 @@
 #ifndef HORARIO_H
 #define HORARIO_H
 
+#include <iostream>
+using namespace std;
+
 class Horario{
     private:
         int hora;
@@ -9,26 +12,26 @@ class Horario{
     public:
         //Constructors
         Horario();
-        Horario(int h, int m, int s);
+        Horario(int, int, int);
         Horario(const Horario &);
 
         //Setters
-        void setHora(int h);
-        void setMinuto(int m);
-        void setSegundo(int s);
+        void setHora(int);
+        void setMinuto(int);
+        void setSegundo(int);
 
         //Getters
-        int getHora();
-        int getMinuto();
-        int getSegundo();
+        int getHora()const;
+        int getMinuto()const;
+        int getSegundo()const;
 
         //Others
-        int compHorario(const Horario &hms);
-        int difSegundos(const Horario &hms);
+        int compHorario(const Horario &);
+        int difSegundos(const Horario &);
         void imprime();
 
         //Operators
-        void operator<<(const Horario &dt);
-        void operator>>(const Horario &dt);
+        friend istream &operator>>(istream &, Horario &);
+        friend ostream &operator<<(ostream &, Horario &);
 };
 #endif

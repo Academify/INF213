@@ -12,8 +12,8 @@ using namespace std;
 class Agenda {
 public:
     Agenda();
-    void inserirItem(const ItemAgenda &it);
-    void compromissosData(const Data &dt);
+    void inserirItem(const ItemAgenda &);
+    void compromissosData(const Data &);
 };
 
 class ItemAgenda{
@@ -25,18 +25,18 @@ private:
 public:
     //Constructors
     ItemAgenda();
-    ItemAgenda(const string &desc, const Data &dt, const Horario &hr);
-    ItemAgenda(const ItemAgenda &it);
+    ItemAgenda(const string &, const Data &, const Horario &);
+    ItemAgenda(const ItemAgenda &);
 
     //Setters
-    void setDesc(const string &desc);
-    void setData(const Data &dt);
-    void setHorario(const Horario &hr);
+    void setDesc(const string &);
+    void setData(const Data &);
+    void setHorario(const Horario &);
 
     //Getters
-    const string getDesc();
-    const Data getData();
-    const Horario getHorario();
+    const string &getDesc()const;
+    const Data &getData()const;
+    const Horario &getHorario()const;
 };
 
 #endif //PRÁTICA_1_AGENDA_H

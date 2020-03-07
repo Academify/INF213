@@ -5,9 +5,7 @@
 // --------------Classe Agenda--------------------------
 
 //Constructors
-Agenda::Agenda() {
-    
-}
+Agenda::Agenda() {}
 
 //Others
 
@@ -25,9 +23,7 @@ void Agenda::compromissosData(const Data &dt){
 
 //Constructors
 
-ItemAgenda::ItemAgenda(){
-
-}
+ItemAgenda::ItemAgenda(){}
 
 ItemAgenda::ItemAgenda(const string &desc, const Data &dt, const Horario &hr) : descricao(desc), d(dt), h(hr) {}
 
@@ -51,13 +47,13 @@ void ItemAgenda::setHorario(const Horario &hr){
 }
 
 //Getters
-const string ItemAgenda::getDesc(){
+const string &ItemAgenda::getDesc()const{
     return this->descricao;
 }
-const Data ItemAgenda::getData(){
+const Data &ItemAgenda::getData()const{
     return this->d;
 }
 
-const Horario ItemAgenda::getHorario(){
+const Horario &ItemAgenda::getHorario()const{
     return this->h;
 }
