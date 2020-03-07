@@ -1,4 +1,3 @@
-
 #include "Agenda.h"
 #include<string>
 
@@ -10,13 +9,20 @@ Agenda::Agenda() {}
 //Others
 
 void Agenda::inserirItem(const ItemAgenda &it){
-    
+    *this->itens = it;
+    this->cont++;
 }
 
 void Agenda::compromissosData(const Data &dt){
-    
-
-    
+    for (int i = 0; i < 1000; i++){
+        if(*this->itens[i].getData == dt){
+            Data dt2 = dt;
+            Horario hr2 = this->itens[i].getHorario();
+            dt2.imprime();
+            hr2.imprime();
+            cout << this->itens[i].getDesc();
+        }
+    }
 }
 
 //-------------Classe ItemAgenda------------------------

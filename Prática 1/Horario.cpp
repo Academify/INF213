@@ -102,7 +102,7 @@ int Horario::difSegundos(const Horario &hms){
 }
 
 void Horario::imprime(){
-    cout << this->hora << " " << this->minuto << " " << this->segundo << endl;
+    cout << this->hora << " " << this->minuto << " " << this->segundo;
 }
 
 istream &operator>>(istream &in, Horario &hr){
