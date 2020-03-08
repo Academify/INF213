@@ -26,12 +26,12 @@ class Horario{
         int getSegundo()const;
 
         //Others
-        int compHorario(const Horario &);
-        int difSegundos(const Horario &);
+        int compHorario(const Horario &)const;
+        int difSegundos(const Horario &)const;
         void imprime();
 
         //Operators
         friend istream &operator>>(istream &, Horario &);
-        friend ostream &operator<<(ostream &, Horario &);
+        friend ostream &operator<<(ostream &, const Horario &);
 };
 #endif

@@ -2,6 +2,7 @@
 
 //Constructors
 
+Horario::Horario(){}
 Horario::Horario(int h, int m = 0, int s = 0){
     this->hora = h;
     this->minuto = m;
@@ -71,7 +72,7 @@ int Horario::getSegundo()const{
 }
 
 //Others
-int Horario::compHorario(const Horario &hms){
+int Horario::compHorario(const Horario &hms)const{
     if(this->hora > hms.hora){
         return 1;
     }else if(this->hora < hms.hora){
@@ -93,7 +94,7 @@ int Horario::compHorario(const Horario &hms){
     }
 }
 
-int Horario::difSegundos(const Horario &hms){
+int Horario::difSegundos(const Horario &hms)const{
     int dif = 0;
     dif = (this->hora - hms.hora)*3600;
     dif = dif + (this->minuto - hms.minuto)*60;
@@ -105,7 +106,7 @@ void Horario::imprime(){
     cout << this->hora << " " << this->minuto << " " << this->segundo;
 }
 
-istream &operator>>(istream &in, Horario &hr){
+istream& operator >>(istream &in, Horario &hr){
     int h,m,s;
 
     in >> h >> m >> s;
@@ -117,8 +118,8 @@ istream &operator>>(istream &in, Horario &hr){
     return in;
 }
 
-ostream &operator<<(ostream &out, Horario &hr){
-    out << hr.getHora << ":" << hr.getMinuto() << ":" << hr.getSegundo() << endl;
+ostream& operator<<(ostream &out, const Horario &hr){
+    out << hr.getHora() << " " << hr.getMinuto() << " " << hr.getSegundo();
     return out;
 }
 

@@ -74,7 +74,7 @@ int Data::getAno()const{
 }
 
 //Others
-int Data::compData(const Data &dma){
+int Data::compData(const Data &dma)const{
     if(this->ano > dma.ano){
         return 1;
     }else if(this->ano < dma.ano){
@@ -96,20 +96,16 @@ int Data::compData(const Data &dma){
     }
 }
 
-int Data::difDias(const Data &dma){
+int Data::difDias(const Data &dma)const{
     int dif = 0;
-    return dif = quantDias(*this, dma);
+    dif = (((this->ano - dma.ano)*12)*30);
+    dif = dif + ((this->mes) - dma.mes)*30;
+    dif = dif + (this->dia - dma.dia);
+    return dif;
 }
 
 void Data::imprime(){
-    cout << this->dia << " " << this->mes << " " << this->ano << endl;
-}
-
-int Data::quantDias(Data dt1, Data dt2){
-    int dif = (((dt1.ano - dt2.ano)*12)*30);
-    dif = dif + ((dt1.mes) - dt2.mes)*30;
-    dif = dif + (dt1.dia - dt2.dia);
-    return dif;
+    cout << this->dia << " " << this->mes << " " << this->ano;
 }
 
 //Operators
@@ -125,6 +121,6 @@ istream &operator>>(istream &in, Data &dt){
 }
 
 ostream &operator<<(ostream &out, const Data &dt){
-    out << dt.getDia() << "/" << dt.getMes() << "/" << dt.getAno();
+    out << dt.getDia() << " " << dt.getMes() << " " << dt.getAno();
     return out;
 }

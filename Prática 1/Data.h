@@ -26,10 +26,9 @@ class Data{
         Data(const Data &);
 
         //Others
-        int compData(const Data &);
-        int difDias(const Data &);
+        int compData(const Data &)const;
+        int difDias(const Data &)const;
         void imprime();
-        int quantDias(Data, Data);
 
         //Operadores
         friend istream &operator>>(istream &,  Data &);

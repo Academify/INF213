@@ -3,21 +3,11 @@
 #define AGENDA_H
 #include <string>
 #include <iostream>
-#include "Data.h"
+
 #include "Horario.h"
+#include "Data.h"
 
 using namespace std;
-
-
-class Agenda {
-public:
-    Agenda();
-    void inserirItem(const ItemAgenda &);
-    void compromissosData(const Data &);
-private:
-    ItemAgenda itens[1000];
-    int cont = 0;
-};
 
 class ItemAgenda{
     
@@ -41,5 +31,17 @@ class ItemAgenda{
         const Data &getData()const;
         const Horario &getHorario()const;
 };
+
+class Agenda {
+    public:
+        Agenda();
+        void inserirItem(const ItemAgenda &);
+        void compromissosData(const Data &)const;
+    private:
+        ItemAgenda itens[1000];
+        int cont = 0;
+};
+
+
 
 #endif //PRÁTICA_1_AGENDA_H

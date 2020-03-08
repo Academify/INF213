@@ -9,18 +9,22 @@ Agenda::Agenda() {}
 //Others
 
 void Agenda::inserirItem(const ItemAgenda &it){
-    *this->itens = it;
-    this->cont++;
+    this->itens[this->cont] = it;
+    (this->cont)++;
 }
 
-void Agenda::compromissosData(const Data &dt){
-    for (int i = 0; i < 1000; i++){
-        if(*this->itens[i].getData == dt){
-            Data dt2 = dt;
-            Horario hr2 = this->itens[i].getHorario();
-            dt2.imprime();
-            hr2.imprime();
-            cout << this->itens[i].getDesc();
+void Agenda::compromissosData(const Data &dt)const{
+    for (int i=0; i < this->cont; i++){
+
+        Data data = this->itens[i].getData();
+
+        if(data.compData(dt)==0){
+
+            Horario hr = this->itens[i].getHorario();
+            string desc = this->itens[i].getDesc();
+
+            //hr.imprime();
+            cout << hr << " " << desc << endl; 
         }
     }
 }
