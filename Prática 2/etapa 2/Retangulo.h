@@ -9,20 +9,20 @@ class Retangulo: public FigBase{
         double altura;
     public:
         //Constructors
-        Retangulo(double, double);
+        Retangulo(double, double, double, double, int, int, int);
         
         //Getters
-        double getLargura();
-        double getAltura();
+        double getLargura()const;
+        double getAltura()const;
 
         //Setters
         void setLargura( double);
         void setAltura(double);
 
         //Others
-        float area();
-        float perimetro();
-        void imprime();
+        float area()const;
+        float perimetro()const;
+        void imprime()const;
 };
 
 #endif

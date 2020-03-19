@@ -12,15 +12,15 @@ class Circulo: public FigBase{
         Circulo(double, double, double,int, int, int);
         
         //Getters
-        double getRaio();
+        double getRaio()const;
 
         //Setters
         void setRaio( double);
 
         //Others
-        float area();
-        float perimetro();
-        void imprime();
+        float area()const;
+        float perimetro()const;
+        void imprime()const;
 };
 
 #endif

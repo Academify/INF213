@@ -1,10 +1,10 @@
 #include "FigBase.h"
 
 //Constructor
-FigBase::FigBase(double x, double y, int expessura, int cor, int tipo){
+FigBase::FigBase(double x, double y, int espessura, int cor, int tipo){
     this->setX(x);
     this->setY(y);
-    this->setExpessura(expessura);
+    this->setEspessura(espessura);
     this->setCor(cor);
     this->setTipo(tipo);
 }
@@ -19,8 +19,8 @@ double FigBase::getY()const{
     return this->y;
 }
 
-int FigBase::getExpessura()const{
-    return this->expessura;
+int FigBase::getEspessura()const{
+    return this->espessura;
 }
 
 int FigBase::getCor()const{
@@ -41,14 +41,14 @@ void FigBase::setY(double y){
     this->y = y;
 }
 
-void FigBase::setExpessura(int expessura){
+void FigBase::setEspessura(int espessura){
 
-    if(expessura <= 1){
-        this->expessura = 1;
-    }else if(expessura >= 5){
-        this->expessura = 5;
+    if(espessura <= 1){
+        this->espessura = 1;
+    }else if(espessura >= 5){
+        this->espessura = 5;
     }else{
-    this->expessura = expessura;
+    this->espessura = espessura;
     }
 }
 
@@ -80,7 +80,7 @@ void FigBase::imprime()const{
     
     cout << "X: " << this->x << endl;
     cout << "Y: " << this->y << endl;
-    cout << "Expessura: " << this->expessura << endl;
+    cout << "Espessura: " << this->espessura << endl;
     cout << "Cor: " << this->cor << endl;
     cout << "Tipo: " << this->tipo << endl;
 }

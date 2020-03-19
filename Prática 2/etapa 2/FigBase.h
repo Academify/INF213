@@ -10,7 +10,7 @@ class FigBase{
         double x;
         double y;
 
-        int expessura;
+        int espessura;
         int cor;
         int tipo;
 
@@ -21,14 +21,14 @@ class FigBase{
         //Getters
         double getX()const;
         double getY()const;
-        int getExpessura()const;
+        int getEspessura()const;
         int getCor()const;
         int getTipo()const;
 
         //Setters
         void setX(double);
         void setY(double);
-        void setExpessura(int);
+        void setEspessura(int);
         void setCor(int);
         void setTipo(int);
 
